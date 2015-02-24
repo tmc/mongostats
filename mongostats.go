@@ -3,7 +3,6 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"log"
 	"os"
 
 	"gopkg.in/mgo.v2"
@@ -23,7 +22,6 @@ func mongostats() error {
 	if err != nil {
 		return err
 	}
-	log.Println(session)
 	var serverStatus = &bson.M{}
 	if err := session.Run("serverStatus", serverStatus); err != nil {
 		return err
